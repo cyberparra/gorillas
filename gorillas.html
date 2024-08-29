@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gorillas</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+    
+  </head>
+  <body>
+    <div class="canvas">
+      <button id="toggleButton">H2Play</button>
+      <div id="toggleText" class="hidden">Grab the bomb with the mouse and drag it to set the throwing angle and the velocity; then release the mouse.</div>
+  </div>
+
+    <canvas id="game"></canvas>
+
+    <audio id="shootBomb">
+      <source src="Pickup_04.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="hitGorilla">
+      <source src="Hero_Death_00.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="missGorilla">
+      <source src="Hit_02.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="info-left">
+      <h3>Player 1</h3>
+      <p>Angle: <span class="angle">0</span>°</p>
+      <p>Velocity: <span class="velocity">0</span></p>
+     
+    </div>
+
+    <div id="info-right">
+      <h3>Player 2</h3>
+      <p>Angle: <span class="angle">0</span>°</p>
+      <p>Velocity: <span class="velocity">0</span></p>
+     
+    </div>
+
+
+    <div id="info-center">
+      <h3>ShootCounter</h3>
+      <p>Shoot#: <span class="shoot">0</span></p>
+     </div>
+
+    <div id="bomb-grab-area"></div>
+
+    <div id="congratulations">
+      <h1><span id="winner">?</span> won!</h1>
+      <button id="new-game">New Game</button>
+    </div>
+
+   
+    
+  </body>
+</html>
