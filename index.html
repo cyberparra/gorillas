@@ -1,87 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gorillas</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+    
+  </head>
+  <body>
+    <div class="canvas">
+      <button id="toggleButton">H2Play</button>
+      <div id="toggleText" class="hidden">Grab the bomb with the mouse and drag it to set the throwing angle and the velocity; then release the mouse.</div>
+  </div>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <canvas id="game"></canvas>
 
-    <title>Cyberparra-P5</title>
+    <audio id="shootBomb">
+      <source src="Pickup_04.mp3" type="audio/mpeg">
+    </audio>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <audio id="hitGorilla">
+      <source src="Hero_Death_00.mp3" type="audio/mpeg">
+    </audio>
 
-    <!-- Custom styles for this template -->
-    <link href="css/scrolling-nav.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <audio id="missGorilla">
+      <source src="Hit_02.mp3" type="audio/mpeg">
+    </audio>
 
-</head>
-<style>
-body {
-  background-color: rgb(201, 155, 76);
-}
-</style>
-
-<body id="page-top" class = "bg-dark" background-color: #d5f4e6;>
-
-<div class = "col-12 px-5 bg-dark text-white">
-    <div class="row px-md-5 pt-5">
-        <div class="col-12">
-            <h3>P5 projects by Adriano Parracciani aka CyberParra (2021)</h3>
-            <p>All sketches are coded in p5.js. </div>
-
-
-        <div class="col-12 pt-5">
-<h4>July 2023</h4>
-<p>2 Dadi</p>
-<a href = "2dadi/index.html"><img class = "p-1" src="2dadi/icon.png" width="200px" scrolling="no" height="200px"></a>
-          <h4>November 2021</h4>
-
-          <p>Cuori 3D</p>
-
-          <a href = "cuori/index.html"><img class = "p-1" src="cuori/icon.png" width="200px" scrolling="no" height="200px"></a>
-
-
-            <h4>October 2021</h4>
-
-            <p>In-Out</p>
-
-            <a href = "inout/index.html"><img class = "p-1" src="inout/inout.png" width="200px" scrolling="no" height="200px"></a>
-
-
-            <p>Coast or Ridge</p>
-
-            <a href = "CoastOrRidge/index.html"><img class = "p-1" src="CoastOrRidge/icon.png" width="200px" scrolling="no" height="200px"></a>
-
-            <p>Moirè Effect</p>
-
-            <a href = "MoireEffect/index.html"><img class = "p-1" src="MoireEffect/icon.png" width="200px" scrolling="no" height="200px"></a>
-
-        </div>
-
-
-
+    <div id="info-left">
+      <h3>Player 1</h3>
+      <p>Angle: <span class="angle">0</span>°</p>
+      <p>Velocity: <span class="velocity">0</span></p>
+     
     </div>
-</div>
 
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-    <p class="m-0 text-center text-white">Copyright &copy; Adriano Parracciani (2021)</p>
-    <!-- <p class = "m-0 text-center text-white">Site coded by <a href = "https://cyberparra.github.io">Cyberparra</a>.</p>-->
+    <div id="info-right">
+      <h3>Player 2</h3>
+      <p>Angle: <span class="angle">0</span>°</p>
+      <p>Velocity: <span class="velocity">0</span></p>
+     
     </div>
-</footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <div id="info-center">
+      <h3>ShootCounter</h3>
+      <p>Shoot#: <span class="shoot">0</span></p>
+     </div>
 
-<!-- Custom JavaScript for this theme -->
-<script src="js/scrolling-nav.js"></script>
+    <div id="bomb-grab-area"></div>
 
-</body>
+    <div id="congratulations">
+      <h1><span id="winner">?</span> won!</h1>
+      <button id="new-game">New Game</button>
+    </div>
+
+   
+    
+  </body>
 </html>
